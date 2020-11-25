@@ -59,6 +59,7 @@ query {
 </page-query>
 <script>
 export default {
+  name:'blog',
   data () {
     return {
       searchKey: ''
