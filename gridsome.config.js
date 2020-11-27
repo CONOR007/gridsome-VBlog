@@ -10,12 +10,12 @@ module.exports = {
       {
       use: '@gridsome/source-strapi',
       options: {
-        apiURL: 'http://strapi.jiailing.com',
+        apiURL: 'http://liucong.icu:1337',
         queryLimit: 1000, // 默认查询100条数据
         typeName:'Strapi',
-        contentTypes: ['project', 'tag', 'blog', 'followings', 'followers'], // StrapiPost
-        singleTypes: ['vblog'],
-        // singleTypes: ['impressum'],//单个节点
+        contentTypes: ['Vblog','blog', 'followings', 'followers','Projects'], // StrapiPost
+        // contentTypes: ['Vblogs','project', 'blog', 'followings', 'followers'], // StrapiPost
+        // singleTypes: ['Vblog'],//单个节点
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
         loginData: {

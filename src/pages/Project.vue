@@ -27,7 +27,7 @@
           </el-row>
         </div>
         <div style="font-size: 0.9rem;line-height: 1.5;color: #606c71;">
-          最近更新 {{item.updateTime}}
+          最近更新 {{item.updated_at}}
         </div>
         <div style="font-size: 1.1rem;line-height: 1.5;color: #303133;padding: 10px 0px 0px 0px">
           {{item.description}}
@@ -58,7 +58,6 @@
       <div style="text-align: center">
         <!--<el-pagination @current-change="list" background layout="prev, pager, next" :current-page.sync="query.page" :page-size="query.pageSize" :total="query.pageNumber*query.pageSize">
         </el-pagination>-->
-        <Pager :info="$page.projects.pageInfo" />
       </div>
     </div>
 
@@ -72,19 +71,15 @@
 </template>
 
 <page-query>
-query($page: Int){
-  projects: allStrapiProject (perPage: 5, page: $page) @paginate{
-    pageInfo {
-      totalPages
-      currentPage
-    }
+query{
+  projects: allStrapiProjects {
     edges {
       node {
         id
         hide
         name
         url
-        updateTime
+        updated_at
         description
         stargazersCount
         watchersCount
